@@ -7,8 +7,37 @@
 </head>
 <body>
 
+   
     <script>
+    
+    function findLargestIn2DArray(array) {
+        // فرض می‌کنیم که آرایه خالی نیست و شامل اعداد است
+        let largestNum = -Infinity; // مقداردهی اولیه به بزرگترین عدد
+    
+        for (let i = 0; i < array.length; i++) { // پیمایش ردیف‌ها
+            for (let j = 0; j < array[i].length; j++) { // پیمایش ستون‌ها
+                let num = array[i][j]; // گرفتن عدد جاری
+                if (num > largestNum) { // مقایسه با بزرگترین عدد
+                    largestNum = num; // به‌روز رسانی بزرگترین عدد
+                }
+            }
+        }
         
+        return largestNum; // بازگشت بزرگترین عدد
+    }
+    
+    // مثال از یک آرایه دو بعدی
+    const array2D = [
+        [1, 2, 3],
+        [4, 5.5, 6],
+        [7, 8, 10]
+    ];
+    
+    // فراخوانی تابع و نمایش نتیجه
+    const largestNumber = findLargestIn2DArray(array2D);
+    console.log("بزرگترین عدد در آرایه:", largestNumber);
+         
+  
     </script>
     
 </body>
